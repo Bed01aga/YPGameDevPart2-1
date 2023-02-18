@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public float movementSpeed = 10.0f;
-    public float jumpForce = 10.0f;
+    public float jumpForce = 40.0f;
     public float groundCheckRadius;
 
     public Transform groundCheck;
@@ -66,12 +66,16 @@ public class PlayerController : MonoBehaviour
         else
         {
             running = false;
-        } 
+        }
+        
     }
 
     private void UpdateAnimations()
     {
         anim.SetBool("Running", running);
+        anim.SetBool("Grounded", isGrounded);
+        anim.SetFloat("AirSpeedY", rb.velocity.y);
+        
     }
 
     private void Flip()
