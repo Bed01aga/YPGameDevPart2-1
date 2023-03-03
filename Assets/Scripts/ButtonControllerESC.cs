@@ -46,4 +46,12 @@ public class ButtonControllerESC : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1.0f;
     }
+
+    public void OnRestartButtonClicked()
+    {
+        Resume();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
+    }
 }

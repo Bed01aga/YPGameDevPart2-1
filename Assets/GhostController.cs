@@ -17,6 +17,7 @@ public class GhostController : MonoBehaviour
         ghost.SetActive(false);
         _isDisplayed = false;
         cmBrain = FindObjectOfType<Cinemachine.CinemachineBrain>();
+        SetDefaultCamera();
     }
 
     void Update()
@@ -48,5 +49,12 @@ public class GhostController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         transform.Translate(new Vector2(horizontal, vertical) * Time.deltaTime * ghostSpeed);
+
+        
+    }
+    public void SetDefaultCamera()
+    {
+        playerCamera.Priority=10;
+        ghostCamera.Priority=0;
     }
 }
