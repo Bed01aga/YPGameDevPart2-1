@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public float movementSpeed = 10.0f;
     public float jumpForce = 40.0f;
+    public float fallMultiplier = 3.2f;
+    public float lowJumpMultiplier = 5f;
     public float groundCheckRadius;
     public float wallCheckDistance;
     public float wallSlideSpeed;
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
         UpdateAnimations();
         CheckIfCanJump();
         CheckIfWallSliding();
+        Fall();
     }
 
     private void FixedUpdate()
@@ -186,5 +189,17 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y, wallCheck.position.z));
+    }
+
+    private void Fall()
+    {
+        if (_rb.velocity.y < -0.1f)
+        {
+            _rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
+        else if (_rb.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            _rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
     }
 }
