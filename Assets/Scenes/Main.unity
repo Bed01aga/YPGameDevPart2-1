@@ -6193,11 +6193,11 @@ PrefabInstance:
       objectReference: {fileID: 1875806375}
     - target: {fileID: 439173161617751958, guid: 536d33df5d04186489396afd99944420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.895847
+      value: -31.46749
       objectReference: {fileID: 0}
     - target: {fileID: 439173161617751958, guid: 536d33df5d04186489396afd99944420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2416275
+      value: 4.8810086
       objectReference: {fileID: 0}
     - target: {fileID: 439173161667686599, guid: 536d33df5d04186489396afd99944420, type: 3}
       propertyPath: m_Follow
@@ -6455,16 +6455,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7837314181104052024, guid: 273c928898007764eb27bd498b3f55f1, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7837314181104052025, guid: 273c928898007764eb27bd498b3f55f1, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7837314181104052025, guid: 273c928898007764eb27bd498b3f55f1, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7837314181104052026, guid: 273c928898007764eb27bd498b3f55f1, type: 3}

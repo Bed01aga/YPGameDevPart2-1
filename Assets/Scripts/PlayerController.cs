@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     public float airDragMultiplier;
 
     public Transform groundCheck;
-    public Transform wallCheck;
 
     public LayerMask whatIsGround;
 
@@ -166,12 +165,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
 
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y, wallCheck.position.z));
-    }
 
     private void Fall()
     {
