@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Elevator
   - Boulder
+  - Ghost
   layers:
   - Default
   - TransparentFX

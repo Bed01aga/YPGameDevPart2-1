@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -11,10 +13,13 @@ public class PlayerController : MonoBehaviour
     private bool _running;
     private bool _isGrounded;
     private bool _canJump;
+    private bool _isGhost;
+    private bool _сheckGhostWakeUp;
+
 
     private int _amountOfJumpsLeft;
-
     public int amountOfJumps = 1;
+    private int _counter;
 
     public float movementSpeed = 10.0f;
     public float jumpForce = 40.0f;
@@ -25,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public float wallSlideSpeed;
     public float movementForceInAir;
     public float airDragMultiplier;
+    
+    
 
     public Transform groundCheck;
 
@@ -33,6 +40,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _сheckGhostWakeUp = false;
+        _counter = 0;
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         _amountOfJumpsLeft = amountOfJumps;
@@ -41,6 +50,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FreezePlayer();
+        CheckGhostStatus();
         if (!GhostController._isDisplayed)
         {
             CheckInput();
@@ -109,8 +120,7 @@ public class PlayerController : MonoBehaviour
         _anim.SetBool("Running", _running);
         _anim.SetBool("Grounded", _isGrounded);
         _anim.SetFloat("AirSpeedY", _rb.velocity.y);
-        
-        
+        _anim.SetBool("GhostWakeUp", _сheckGhostWakeUp);
     }
 
     private void Flip()
@@ -159,11 +169,57 @@ public class PlayerController : MonoBehaviour
         {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
             _amountOfJumpsLeft--;
-            _anim.SetTrigger("Jump");
         }
         
     }
 
+    void CheckGhostStatus()
+    {
+        
+        if (GhostController._isDisplayed)
+        {
+            _counter++;
+            _isGhost = true;
+            _anim.SetBool("GhostSwap", _isGhost);
+        }
+        else
+        {
+            _isGhost = false;
+            if (_counter > 0 && !_isGhost)
+            {
+                _сheckGhostWakeUp = true;
+                _anim.SetBool("GhostSwap", _isGhost);
+                StartCoroutine(DelayMethod());
+
+            }
+        }
+    }
+    
+    
+    
+    IEnumerator DelayMethod()
+    {
+        yield return new WaitForSeconds(1f);
+        _сheckGhostWakeUp = false;
+        _counter = 0;
+    }
+    
+    
+    
+    void FreezePlayer()
+    {
+        if (_isGhost || _сheckGhostWakeUp)
+        {
+            _rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            _rb.gravityScale = 2f;
+        }
+        else
+        {
+            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        
+    }
+    
 
 
 
