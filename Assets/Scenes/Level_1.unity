@@ -27460,25 +27460,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2946892794526157267, guid: 142d1c8ba2bf0934b973bf59a1478c8a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3311936098364373787, guid: 142d1c8ba2bf0934b973bf59a1478c8a, type: 3}
       propertyPath: m_Name
       value: Elevator
-      objectReference: {fileID: 0}
-    - target: {fileID: 3311936098364373787, guid: 142d1c8ba2bf0934b973bf59a1478c8a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3873049626735947787, guid: 142d1c8ba2bf0934b973bf59a1478c8a, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4982292477344531919, guid: 142d1c8ba2bf0934b973bf59a1478c8a, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 142d1c8ba2bf0934b973bf59a1478c8a, type: 3}
