@@ -7,6 +7,8 @@ TagManager:
   - Elevator
   - Boulder
   - Ghost
+  - PanelESC
+  - PanelDead
   layers:
   - Default
   - TransparentFX

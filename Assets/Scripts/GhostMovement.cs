@@ -6,11 +6,11 @@ public class GhostMovement : MonoBehaviour
 {
     public float speed = 10f; // Скорость движения
 
-    private Rigidbody2D rb2d;
+    private Rigidbody2D _rb2d;
 
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        _rb2d = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
@@ -23,6 +23,6 @@ public class GhostMovement : MonoBehaviour
         
         movement *=  speed;
         
-        rb2d.velocity = movement;
+        _rb2d.velocity = movement;
     }
 }

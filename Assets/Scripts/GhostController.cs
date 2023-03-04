@@ -1,20 +1,17 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-
-    
     public GameObject player;
     public GameObject ghost;
     public Cinemachine.CinemachineBrain cmBrain;
     public Cinemachine.CinemachineVirtualCamera playerCamera;
     public Cinemachine.CinemachineVirtualCamera ghostCamera;
     public float ghostSpeed;
-    public static bool _isDisplayed;
+    public static bool IsDisplayed;
     public Vector3 offset = new Vector2(2f,0f);
     
-    private float _distancePlayerAndGhost;
+    public static float DistancePlayerAndGhost;
     
     private Rigidbody2D _rb2d;
 
@@ -24,14 +21,14 @@ public class GhostController : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         // Hide the second character at the start of the game
         ghost.SetActive(false);
-        _isDisplayed = false;
+        IsDisplayed = false;
         cmBrain = FindObjectOfType<Cinemachine.CinemachineBrain>();
         SetDefaultCamera();
     }
 
     void Update()
     {
-        if (!_isDisplayed)
+        if (!IsDisplayed)
         {
             FollowPlayer();
         }
@@ -43,14 +40,14 @@ public class GhostController : MonoBehaviour
     void SwapCamera()
     {
 
-        if (_distancePlayerAndGhost < 3f && !ButtonControllerESC.IsPaused)
+        if (DistancePlayerAndGhost < 3f && !ButtonControllerESC.IsPaused)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
-                _isDisplayed = !_isDisplayed;
-                ghost.SetActive(_isDisplayed);
+                IsDisplayed = !IsDisplayed;
+                ghost.SetActive(IsDisplayed);
 
-                if (!_isDisplayed)
+                if (!IsDisplayed)
                 {
                     playerCamera.Priority = 10;
                     ghostCamera.Priority = 0;
@@ -60,7 +57,7 @@ public class GhostController : MonoBehaviour
                     playerCamera.Priority = 0;
                     ghostCamera.Priority = 10;
                 }
-                if (_isDisplayed)
+                if (IsDisplayed)
                 {
                     ghost.transform.position = player.transform.position + offset;
                 }
@@ -70,7 +67,7 @@ public class GhostController : MonoBehaviour
     
     void CheclDistance()
     {
-        _distancePlayerAndGhost = Vector2.Distance(player.transform.position, ghost.transform.position);
+        DistancePlayerAndGhost = Vector2.Distance(player.transform.position, ghost.transform.position);
     }
     
     void FollowPlayer()

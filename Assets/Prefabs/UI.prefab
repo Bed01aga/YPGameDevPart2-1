@@ -965,8 +965,8 @@ GameObject:
   - component: {fileID: 3609359573776963990}
   - component: {fileID: 3609359573776963991}
   m_Layer: 0
-  m_Name: Panel
-  m_TagString: Untagged
+  m_Name: PanelESC
+  m_TagString: PanelESC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1183,7 +1183,7 @@ GameObject:
   - component: {fileID: 3609359574348992781}
   m_Layer: 0
   m_Name: ESC Menu
-  m_TagString: Untagged
+  m_TagString: PanelESC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1283,6 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   escMenu: {fileID: 3609359573776963989}
+  deadMenu: {fileID: 5893039883829005189}
 --- !u!1 &3609359574813723966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,8 +1464,8 @@ GameObject:
   - component: {fileID: 6111659359057611442}
   - component: {fileID: 2270670206191613922}
   m_Layer: 0
-  m_Name: Panel
-  m_TagString: Untagged
+  m_Name: PanelDead
+  m_TagString: PanelDead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1818,7 +1819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8689198261622317891
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1913,7 +1914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd3b8ab2c53ab94d9f81ef38591f133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escMenu: {fileID: 0}
+  escMenu: {fileID: 3609359573776963989}
+  deadMenu: {fileID: 5893039883829005189}
 --- !u!1 &8165225025383413732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +1982,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: You're dead
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

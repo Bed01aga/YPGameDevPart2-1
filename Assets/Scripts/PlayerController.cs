@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,12 +27,12 @@ public class PlayerController : MonoBehaviour
     public float fallMultiplier = 3.2f;
     public float lowJumpMultiplier = 5f;
     public float groundCheckRadius;
-    public float wallCheckDistance;
-    public float wallSlideSpeed;
     public float movementForceInAir;
     public float airDragMultiplier;
-    
-    
+
+    [SerializeField] private AudioSource standUpSoundEffect;
+    [SerializeField] private AudioSource fallSoundEffect;
+    [SerializeField] private AudioSource walkSoundEffect;
 
     public Transform groundCheck;
 
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         FreezePlayer();
         CheckGhostStatus();
-        if (!GhostController._isDisplayed)
+        if (!GhostController.IsDisplayed)
         {
             CheckInput();
             CheckMovementDirection();
@@ -64,7 +65,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!GhostController._isDisplayed)
+
+        if (!GhostController.IsDisplayed)
         {
             ApplyMovenent();
             CheckSurroundings();
@@ -115,9 +117,8 @@ public class PlayerController : MonoBehaviour
                 _running = false;
             }
         }
-        
-        
     }
+
 
     private void UpdateAnimations()
     {
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        
     }
 
     private void ApplyMovenent()
@@ -171,6 +173,7 @@ public class PlayerController : MonoBehaviour
     {
         if (_canJump)
         {
+            standUpSoundEffect.Play();
             _rb.velocity = new Vector2(_rb.velocity.x, jumpForce);
             _amountOfJumpsLeft--;
         }
@@ -180,7 +183,7 @@ public class PlayerController : MonoBehaviour
     void CheckGhostStatus()
     {
         
-        if (GhostController._isDisplayed)
+        if (GhostController.IsDisplayed)
         {
             _counter++;
             _isGhost = true;
@@ -229,6 +232,7 @@ public class PlayerController : MonoBehaviour
 
     private void Fall()
     {
+        
         if (_rb.velocity.y < -0.1f)
         {
             _rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;

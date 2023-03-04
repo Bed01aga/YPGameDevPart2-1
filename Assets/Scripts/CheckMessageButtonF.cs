@@ -17,7 +17,7 @@ public class CheckMessageButtonF : MonoBehaviour
     
 private void Update()
     {
-        if (_playerOnArea)
+        if (_playerOnArea || (GhostController.DistancePlayerAndGhost < 3f && GhostController.IsDisplayed))
         {
             imgButtonF.enabled = true;
             

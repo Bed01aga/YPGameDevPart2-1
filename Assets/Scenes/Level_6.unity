@@ -552,22 +552,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 387649200581450259, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: m_text
-      value: You are lose
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609359573776963989, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: m_Name
-      value: PanelESC
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609359573776963989, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3609359574348992781, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: deadMenu
-      value: 
-      objectReference: {fileID: 1232374013}
     - target: {fileID: 3609359574813723961, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -615,26 +599,6 @@ PrefabInstance:
     - target: {fileID: 3609359574813723966, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5893039883829005189, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: m_Name
-      value: PanelDead
-      objectReference: {fileID: 0}
-    - target: {fileID: 5893039883829005189, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7750096908307034863, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: escMenu
-      value: 
-      objectReference: {fileID: 1226856974}
-    - target: {fileID: 7750096908307034863, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: deadMenu
-      value: 
-      objectReference: {fileID: 1232374013}
-    - target: {fileID: 7983417702000593229, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
@@ -1164,6 +1128,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.3228626, y: 0}
+  m_Offset: {x: 0.004960537, y: -0.014750481}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1175,6 +1140,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 3.6457253, y: 1}
+  m_Size: {x: 0.32133198, y: 1.1387653}
   m_EdgeRadius: 0
 --- !u!1 &635419787
 GameObject:

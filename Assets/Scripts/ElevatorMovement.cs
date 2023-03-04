@@ -5,34 +5,16 @@ public class ElevatorMovement : MonoBehaviour
     private bool _move;
     private float _speed = 2f;
     
-    
-    private bool _playerOnPlatform;
-
-    private void Start()
-    {
-        _playerOnPlatform = false;
-    }
 
     private void FixedUpdate()
     {
-        if (_playerOnPlatform)
+        if (ElevatorTrigger.PlayerOnPlatform)
         {
             ElevatorMoving();
         }
 
     }
     
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
-            _playerOnPlatform = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Player")) {
-            _playerOnPlatform = false;
-        }
-    }
 
     private void ElevatorMoving()
     {

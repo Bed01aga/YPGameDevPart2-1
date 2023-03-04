@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class ButtonControllerESC : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ButtonControllerESC : MonoBehaviour
     public static bool IsPaused;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
