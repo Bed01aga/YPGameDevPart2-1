@@ -7,6 +7,7 @@ public class MoveElevator : MonoBehaviour
     public Transform startPoint;
     public Transform endPoint;
     public float speed = 0.5f;
+    public bool hasSignal = false;
 
     private float startTime;
     private float journeyLength;
@@ -23,12 +24,21 @@ public class MoveElevator : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Calculate the distance covered so far
+        if (hasSignal)
+        {
+            // Calculate the distance covered so far
 
-        // Calculate the fraction of the journey completed
-        float fractionOfJourney = Mathf.PingPong(Time.time * speed, 1.0f);
+            // Calculate the fraction of the journey completed
+            float fractionOfJourney = Mathf.PingPong(Time.time * speed, 1.0f);
 
-        // Move the object between the two points using Lerp
-        transform.position = Vector3.Lerp(startPoint.position, endPoint.position, fractionOfJourney);
+            // Move the object between the two points using Lerp
+            transform.position = Vector3.Lerp(startPoint.position, endPoint.position, fractionOfJourney);
+        }
+       
+    }
+
+    public void Do()
+    {
+        hasSignal = true;
     }
 }
