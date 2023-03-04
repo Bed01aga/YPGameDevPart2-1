@@ -95,23 +95,27 @@ public class PlayerController : MonoBehaviour
 
     private void CheckMovementDirection()
     {
-        if (_isFacingRight && _movementInputDirection < 0)
+        if (!ButtonControllerESC.IsPaused)
         {
-            Flip();
-        }
-        else if (!_isFacingRight && _movementInputDirection > 0)
-        {
-            Flip();
-        }
+            if (_isFacingRight && _movementInputDirection < 0)
+            {
+                Flip();
+            }
+            else if (!_isFacingRight && _movementInputDirection > 0)
+            {
+                Flip();
+            }
 
-        if ((_rb.velocity.x > 0.1) || (_rb.velocity.x < -0.1))
-        {
-            _running = true;
+            if ((_rb.velocity.x > 0.1) || (_rb.velocity.x < -0.1))
+            {
+                _running = true;
+            }
+            else
+            {
+                _running = false;
+            }
         }
-        else
-        {
-            _running = false;
-        }
+        
         
     }
 

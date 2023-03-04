@@ -43,7 +43,7 @@ public class GhostController : MonoBehaviour
     void SwapCamera()
     {
 
-        if (_distancePlayerAndGhost < 3f)
+        if (_distancePlayerAndGhost < 3f && !ButtonControllerESC.IsPaused)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {

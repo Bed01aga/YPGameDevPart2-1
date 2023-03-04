@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class ButtonControllerESC : MonoBehaviour
 {
     [SerializeField] private GameObject escMenu;
-    private bool isPaused;
+    [SerializeField] private GameObject deadMenu;
+    public static bool IsPaused;
     void Start()
     {
         
@@ -16,11 +17,11 @@ public class ButtonControllerESC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !isPaused)
+        if (Input.GetButtonDown("Cancel") && !IsPaused && !KillPlayer.PlayerIsDead)
         {
             Pause();
         }
-        else if(Input.GetButtonDown("Cancel") && isPaused)
+        else if(Input.GetButtonDown("Cancel") && IsPaused && !KillPlayer.PlayerIsDead)
         {
             Resume();
         }
@@ -30,7 +31,7 @@ public class ButtonControllerESC : MonoBehaviour
     public void Resume()
     {
         escMenu.SetActive(false);
-        isPaused = false;
+        IsPaused = false;
         Time.timeScale = 1.0f;
         Debug.Log("button Pushed");
     }
@@ -38,7 +39,14 @@ public class ButtonControllerESC : MonoBehaviour
     public void Pause()
     {
         escMenu.SetActive(true);
-        isPaused = true;
+        IsPaused = true;
+        Time.timeScale = 0.0f;
+    }
+
+    public void DeadMenu()
+    {
+        deadMenu.SetActive(true);
+        IsPaused = true;
         Time.timeScale = 0.0f;
     }
 
@@ -54,7 +62,5 @@ public class ButtonControllerESC : MonoBehaviour
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Debug.Log("button Pushed");
-
-
     }
 }
