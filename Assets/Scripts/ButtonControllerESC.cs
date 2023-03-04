@@ -32,6 +32,7 @@ public class ButtonControllerESC : MonoBehaviour
         escMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1.0f;
+        Debug.Log("button Pushed");
     }
 
     public void Pause()
@@ -45,12 +46,14 @@ public class ButtonControllerESC : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1.0f;
+        Debug.Log("button Pushed");
     }
 
     public void OnRestartButtonClicked()
     {
         Resume();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("button Pushed");
 
 
     }
