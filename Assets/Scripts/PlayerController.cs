@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour
     private bool _isFacingRight = true;
     private bool _running;
     private bool _isGrounded;
-    private bool _isTouchingWall;
-    private bool _isWallSliding;
     private bool _canJump;
 
     private int _amountOfJumpsLeft;
@@ -44,29 +42,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckInput();
-        CheckMovementDirection();
-        UpdateAnimations();
-        CheckIfCanJump();
-        CheckIfWallSliding();
-        Fall();
+        if (!GhostController._isDisplayed)
+        {
+            CheckInput();
+            CheckMovementDirection();
+            UpdateAnimations();
+            CheckIfCanJump();
+            Fall();
+        }
     }
 
     private void FixedUpdate()
     {
-        ApplyMovenent();
-        CheckSurroundings();
-    }
-
-    private void CheckIfWallSliding()
-    {
-        if (_isTouchingWall && !_isGrounded && _rb.velocity.y < 0)
+        if (!GhostController._isDisplayed)
         {
-            _isWallSliding = true;
-        }
-        else
-        {
-            _isWallSliding=false;
+            ApplyMovenent();
+            CheckSurroundings();
         }
     }
 
@@ -74,7 +65,6 @@ public class PlayerController : MonoBehaviour
     {
         _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        _isTouchingWall = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
     }
     private void CheckIfCanJump()
     {
@@ -120,16 +110,14 @@ public class PlayerController : MonoBehaviour
         _anim.SetBool("Running", _running);
         _anim.SetBool("Grounded", _isGrounded);
         _anim.SetFloat("AirSpeedY", _rb.velocity.y);
-        _anim.SetBool("WallSlide", _isWallSliding);
+        
+        
     }
 
     private void Flip()
     {
-        if (!_isWallSliding)
-        {
-            _isFacingRight = !_isFacingRight;
-            transform.Rotate(0.0f, 180.0f, 0.0f);
-        }
+        _isFacingRight = !_isFacingRight;
+        transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
     private void CheckInput()
@@ -144,32 +132,26 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovenent()
     {
-        if (_isGrounded)
-        {
-            _rb.velocity = new Vector2(movementSpeed * _movementInputDirection, _rb.velocity.y);
-        }
-        else if (!_isGrounded && !_isWallSliding && _movementInputDirection != 0)
-        {
-            Vector2 forceToAdd = new Vector2(movementForceInAir * _movementInputDirection, 0);
-            _rb.AddForce(forceToAdd);
 
-            if (Mathf.Abs(_rb.velocity.x) > movementSpeed)
+            if (_isGrounded)
             {
                 _rb.velocity = new Vector2(movementSpeed * _movementInputDirection, _rb.velocity.y);
             }
-        }
-        else if (!_isGrounded && !_isWallSliding && _movementInputDirection == 0)
-        {
-            _rb.velocity = new Vector2(_rb.velocity.x * airDragMultiplier, _rb.velocity.y);
-        }
-
-        if (_isWallSliding)
-        {
-            if (_rb.velocity.y < -wallSlideSpeed)
+            else if (!_isGrounded && _movementInputDirection != 0)
             {
-                _rb.velocity = new Vector2(_rb.velocity.x, -wallSlideSpeed);
+                Vector2 forceToAdd = new Vector2(movementForceInAir * _movementInputDirection, 0);
+                _rb.AddForce(forceToAdd);
+
+                if (Mathf.Abs(_rb.velocity.x) > movementSpeed)
+                {
+                    _rb.velocity = new Vector2(movementSpeed * _movementInputDirection, _rb.velocity.y);
+                }
             }
-        }
+            else if (!_isGrounded && _movementInputDirection == 0)
+            {
+                _rb.velocity = new Vector2(_rb.velocity.x * airDragMultiplier, _rb.velocity.y);
+            }
+
     }
 
     private void Jump()
