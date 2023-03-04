@@ -6,6 +6,8 @@ public class LeverScript : MonoBehaviour
 {
     public bool leverState = false;
     private bool _isInRange;
+    public MoveElevator elevator;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -25,7 +27,7 @@ public class LeverScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && _isInRange)
         {
-            //TODO: Do Something
+            elevator.Do() ;
             leverState = !leverState;
         }
     }
