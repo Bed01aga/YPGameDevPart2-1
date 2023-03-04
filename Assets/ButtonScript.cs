@@ -7,14 +7,14 @@ public class ButtonScript : MonoBehaviour
     private bool _isInRange;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Boulder"))
         {
             _isInRange = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Boulder"))
         {
             _isInRange = false;
         }
@@ -22,9 +22,9 @@ public class ButtonScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _isInRange)
+        if ( _isInRange)
         {
-            //TODO: Do Something
+            Debug.Log("FGHJK");
         }
     }
 }
