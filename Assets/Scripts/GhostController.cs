@@ -14,11 +14,14 @@ public class GhostController : MonoBehaviour
     public static bool _isDisplayed;
     public Vector3 offset = new Vector2(2f,0f);
     
+    private float _distancePlayerAndGhost;
     
-        
+    private Rigidbody2D _rb2d;
+
 
     void Start()
     {
+        _rb2d = GetComponent<Rigidbody2D>();
         // Hide the second character at the start of the game
         ghost.SetActive(false);
         _isDisplayed = false;
@@ -28,7 +31,21 @@ public class GhostController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (!_isDisplayed)
+        {
+            FollowPlayer();
+        }
+        CheclDistance();
+        SwapCamera();
+        
+    }
+    
+    void SwapCamera()
+    {
+
+        if (_distancePlayerAndGhost < 3f)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 _isDisplayed = !_isDisplayed;
                 ghost.SetActive(_isDisplayed);
@@ -48,19 +65,18 @@ public class GhostController : MonoBehaviour
                     ghost.transform.position = player.transform.position + offset;
                 }
             }
-        
-
-        // Toggle the display of the second character when F is pressed
-        
-
-        // Move the second character using the arrow keys
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        transform.Translate(new Vector2(horizontal, vertical) * Time.deltaTime * ghostSpeed);
-
-        
+        }
     }
-
+    
+    void CheclDistance()
+    {
+        _distancePlayerAndGhost = Vector2.Distance(player.transform.position, ghost.transform.position);
+    }
+    
+    void FollowPlayer()
+    {
+        ghost.transform.position = player.transform.position + offset;
+    }
     
     public void SetDefaultCamera()
     {
