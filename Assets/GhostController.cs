@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GhostController : MonoBehaviour
@@ -8,8 +9,10 @@ public class GhostController : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera playerCamera;
     public Cinemachine.CinemachineVirtualCamera ghostCamera;
     public float ghostSpeed;
-    private bool _isDisplayed;
+    public static bool _isDisplayed;
     public Vector3 offset = new Vector2(2f,0f);
+    
+        
 
     void Start()
     {
@@ -27,9 +30,8 @@ public class GhostController : MonoBehaviour
         {
             _isDisplayed = !_isDisplayed;
             ghost.SetActive(_isDisplayed);
-            player.SetActive(!_isDisplayed);
 
-            if (player.activeSelf)
+            if (!_isDisplayed)
             {
                 playerCamera.Priority = 10;
                 ghostCamera.Priority = 0;
