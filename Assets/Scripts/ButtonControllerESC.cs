@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonControllerESC : MonoBehaviour
 {
-    [SerializeField] private GameObject escMenu;
-    [SerializeField] private GameObject deadMenu;
+    public GameObject escMenu;
+    public GameObject deadMenu;
     public static bool IsPaused;
     void Start()
     {
