@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GhostController : MonoBehaviour
 {
-    public AudioClip audioClip;
     public AudioSource audioSource;
 
     public GameObject player;
@@ -30,6 +29,11 @@ public class GhostController : MonoBehaviour
         if (!IsDisplayed)
         {
             FollowPlayer();
+        }
+
+        if (KillPlayer.PlayerIsDead)
+        {
+            audioSource.Stop();
         }
 
         CheclDistance();

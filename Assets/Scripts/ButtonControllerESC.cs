@@ -12,7 +12,7 @@ public class ButtonControllerESC : MonoBehaviour
     public static bool IsPaused;
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -47,6 +47,7 @@ public class ButtonControllerESC : MonoBehaviour
     public void DeadMenu()
     {
         deadMenu.SetActive(true);
+        
         IsPaused = true;
         Time.timeScale = 0.0f;
     }
