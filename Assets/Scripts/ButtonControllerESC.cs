@@ -34,7 +34,7 @@ public class ButtonControllerESC : MonoBehaviour
         escMenu.SetActive(false);
         IsPaused = false;
         Time.timeScale = 1.0f;
-        Debug.Log("button Pushed");
+
     }
 
     public void Pause()
@@ -42,7 +42,7 @@ public class ButtonControllerESC : MonoBehaviour
         escMenu.SetActive(true);
         IsPaused = true;
         Time.timeScale = 0.0f;
-        Debug.Log("button Pushed1234");
+
     }
 
     public void DeadMenu()

@@ -4,10 +4,6 @@ public class KillPlayer : ButtonControllerESC
 {
     public static bool PlayerIsDead;
     
-    [SerializeField] private AudioSource audioSourcePlayer;
-    [SerializeField] private AudioClip audioClipPlayer;
-    [SerializeField] private AudioSource audioSourceGhost;
-    [SerializeField] private AudioClip audioClipGhost;
 
     void Start()
     {
@@ -18,13 +14,11 @@ public class KillPlayer : ButtonControllerESC
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerIsDead = true;
-            audioSourcePlayer.PlayOneShot(audioClipPlayer);
             DeadMenu();
         }
         else if (collision.gameObject.CompareTag("Ghost"))
         {
             PlayerIsDead = true;
-            audioSourceGhost.PlayOneShot(audioClipGhost);
             DeadMenu();
 
         }
