@@ -22,6 +22,7 @@ public class GhostController : MonoBehaviour
         {
             ghost.SetActive(true);
             IsDisplayed = true;
+            audioSource.Play();
             playerCamera.Priority = 0;
             ghostCamera.Priority = 10;
         }
