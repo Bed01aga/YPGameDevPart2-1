@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff8f4c4b-a3e7-48e3-8265-d185b976dc46" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../KillPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../KillPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prefabs/GhostContainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/GhostContainer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prefabs/Holy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/Holy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prefabs/KillZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/KillZone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Level_4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scripts/ButtonControllerESC.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts/ButtonControllerESC.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scripts/GhostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Scripts/GhostController.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MZo2xULoi4sybf58ci7yMDMUcb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff8f4c4b-a3e7-48e3-8265-d185b976dc46" name="Changes" comment="" />
+      <created>1677984266374</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677984266374</updated>
+      <workItem from="1677984269936" duration="65000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

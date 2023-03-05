@@ -15,9 +15,10 @@ public class RunaScript : MonoBehaviour
     {
         playerController = player.GetComponent<PlayerController>();    
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnTriggerStay(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ghost")
+        if ((collision.gameObject.tag == "Ghost") && (Input.GetKeyDown(KeyCode.E)))
         {
             if (needToCreate != null)
             {
