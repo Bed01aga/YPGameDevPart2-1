@@ -12,6 +12,7 @@ public class PlaySoundsDead : MonoBehaviour
     private void Start()
     {
         counter = 0;
+        audioSourcePlayerDead.volume = 0.5f;
     }
 
     private void Update()

@@ -191,8 +191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -996305257
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9b035c7a2e827c24fa6df9bf12aa7e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -259,10 +259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escMenu: {fileID: 0}
   deadMenu: {fileID: 0}
-  audioSourcePlayer: {fileID: 1717034915}
-  audioClipPlayer: {fileID: 8300000, guid: f6868832da3ef49e5bba7c18a5d42c36, type: 3}
-  audioSourceGhost: {fileID: 1717034914}
-  audioClipGhost: {fileID: 8300000, guid: 076e27fc35dca4f68ac9f4d43dd69947, type: 3}
 --- !u!82 &1717034914
 AudioSource:
   m_ObjectHideFlags: 0
