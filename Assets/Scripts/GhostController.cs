@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GhostController : MonoBehaviour
 {
@@ -17,11 +18,21 @@ public class GhostController : MonoBehaviour
     
     void Start()
     {
-        // Hide the second character at the start of the game
-        ghost.SetActive(false);
-        IsDisplayed = false;
-        cmBrain = FindObjectOfType<Cinemachine.CinemachineBrain>();
-        SetDefaultCamera();
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            ghost.SetActive(true);
+            IsDisplayed = true;
+            playerCamera.Priority = 0;
+            ghostCamera.Priority = 10;
+        }
+        else
+        {
+            ghost.SetActive(false);
+            IsDisplayed = false;
+            cmBrain = FindObjectOfType<Cinemachine.CinemachineBrain>();
+            SetDefaultCamera();
+        }
+        
     }
 
     void Update()
