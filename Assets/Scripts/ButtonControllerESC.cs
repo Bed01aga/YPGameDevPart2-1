@@ -42,6 +42,7 @@ public class ButtonControllerESC : MonoBehaviour
         escMenu.SetActive(true);
         IsPaused = true;
         Time.timeScale = 0.0f;
+        Debug.Log("button Pushed1234");
     }
 
     public void DeadMenu()

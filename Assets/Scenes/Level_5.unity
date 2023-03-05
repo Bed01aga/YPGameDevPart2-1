@@ -436,6 +436,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: KillZone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8577403615103863266, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
+      propertyPath: m_Size.x
+      value: 3.9851208
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577403615103863266, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.1531649
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
 --- !u!1 &388618886
@@ -639,6 +647,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3609359573776963989, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3609359574813723961, guid: b7b25db095d91024198d04bd7c4a29ff, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -720,11 +732,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 439173161617751958, guid: 536d33df5d04186489396afd99944420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -86.03749
+      value: -31.46749
       objectReference: {fileID: 0}
     - target: {fileID: 439173161617751958, guid: 536d33df5d04186489396afd99944420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 38.99101
+      value: 4.8810086
       objectReference: {fileID: 0}
     - target: {fileID: 439173161667686598, guid: 536d33df5d04186489396afd99944420, type: 3}
       propertyPath: m_LocalPosition.x
@@ -913,6 +925,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: KillZone
       objectReference: {fileID: 0}
+    - target: {fileID: 8577403615103863266, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6831403
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577403615103863266, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.3041556
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
 --- !u!1 &774473626
@@ -1031,6 +1051,71 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5911255, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &895761369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2184475621179648121, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.24861
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.674479
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4537807
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999461, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119178999462, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_Name
+      value: PrefabForButtons
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017877119281435051, guid: 012621126fb64416391b90406e23af6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 012621126fb64416391b90406e23af6c, type: 3}
 --- !u!1 &906928571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1456,14 @@ PrefabInstance:
     - target: {fileID: 2239230639462033918, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
       propertyPath: m_Name
       value: KillZone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577403615103863266, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6582549
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577403615103863266, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.3165983
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47411699f67f8db45a8a10bdd05b105c, type: 3}

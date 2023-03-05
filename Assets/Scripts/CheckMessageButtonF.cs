@@ -22,10 +22,13 @@ private void Update()
             imgButtonF.enabled = true;
             
         }
+        else if (_playerOnArea && GhostController.IsDisplayed)
+        {
+            imgButtonF.enabled = false;
+        }
         else
         {
             imgButtonF.enabled = false;
-            
         }
     }
     

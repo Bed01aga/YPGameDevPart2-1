@@ -19,11 +19,11 @@ public class ButtonController : MonoBehaviour
 
     public void OnSelectButtonClicked()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync(2);
     }
 
     public void OnNewGameButtonClicked()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(3);
     }
 }

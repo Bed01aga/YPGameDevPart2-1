@@ -16,9 +16,9 @@ public class RunaScript : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();    
     }
     
-    private void OnTriggerStay(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if ((collision.gameObject.tag == "Ghost") && (Input.GetKeyDown(KeyCode.E)))
+        if (collision.gameObject.CompareTag("Ghost") && Input.GetKeyDown(KeyCode.E))
         {
             if (needToCreate != null)
             {
@@ -35,9 +35,8 @@ public class RunaScript : MonoBehaviour
                 }
             }
             if (moveElevator != null)
-            {
-            moveElevator.Do();
-
+            { 
+                moveElevator.Do();
             }
 
             Debug.Log(playerController.GetTriggered());
