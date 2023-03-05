@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
     private bool _canJump;
     private bool _isGhost;
     private bool _сheckGhostWakeUp;
+    public bool Triggered { get; set; }
     private bool _isFalling;
+
 
 
     private int _amountOfJumpsLeft;
@@ -233,8 +235,15 @@ public class PlayerController : MonoBehaviour
         
     }
     
-    
-    void CheckFalling()
+    public void setTriggered(bool val)
+    {
+        Triggered = val;
+    }
+    public bool GetTriggered()
+    {
+        return Triggered;
+    }
+        void CheckFalling()
     {
         if (_isGrounded)
         {

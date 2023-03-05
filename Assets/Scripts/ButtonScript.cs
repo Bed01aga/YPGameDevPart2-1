@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonScript : MonoBehaviour
 {
     private bool _isInRange;
+    public MoveElevator _moveElevator;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boulder"))
@@ -24,7 +25,7 @@ public class ButtonScript : MonoBehaviour
     {
         if ( _isInRange)
         {
-            Debug.Log("FGHJK");
+            _moveElevator.Do();
         }
     }
 }

@@ -5,17 +5,47 @@ using UnityEngine;
 public class RunaScript : MonoBehaviour
 {
     public GameObject[] needToCreate;
+    public GameObject[] needToDestroy;
+    public MoveElevator moveElevator;
+    public GameObject player;
+    private PlayerController playerController;
     // Start is called before the first frame update
-    
-    private void OnTriggerStay2D(Collider2D collision)
+
+    private void Start()
     {
-        if (collision.gameObject.tag == "Ghost" && Input.GetKeyDown(KeyCode.E))
+        playerController = player.GetComponent<PlayerController>();    
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ghost")
         {
-            foreach (var item in needToCreate)
+            if (needToCreate != null)
             {
-                item.gameObject.SetActive(true);
+                foreach (var item in needToCreate)
+                {
+                    item.gameObject.SetActive(true);
+                }
+            }
+            if (needToDestroy != null)
+            {
+                foreach (var item in needToDestroy)
+                {
+                    item.gameObject.SetActive(false);
+                }
+            }
+            if (moveElevator != null)
+            {
+            moveElevator.Do();
+
             }
 
+            Debug.Log(playerController.GetTriggered());
+            if (playerController.GetTriggered())
+            {
+                Debug.Log(124124);
+                player.transform.position = new Vector2(42.6f, 38.4f);
+            }
         }
     }
+    
 }
