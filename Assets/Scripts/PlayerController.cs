@@ -16,11 +16,12 @@ public class PlayerController : MonoBehaviour
     private bool _canJump;
     private bool _isGhost;
     private bool _сheckGhostWakeUp;
+    private bool _isFalling;
 
 
     private int _amountOfJumpsLeft;
     public int amountOfJumps = 1;
-    private int _counter;
+    private int _counter = 0;
 
     public float movementSpeed = 10.0f;
     public float jumpForce = 40.0f;
@@ -32,7 +33,11 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private AudioSource standUpSoundEffect;
     [SerializeField] private AudioSource fallSoundEffect;
-    [SerializeField] private AudioSource walkSoundEffect;
+    [SerializeField] private AudioClip fallSound;
+    [SerializeField] private AudioSource walkSoundEffectFirst;
+    [SerializeField] private AudioClip walkSoundFirst;
+    [SerializeField] private AudioSource walkSoundEffectSecond;
+    [SerializeField] private AudioClip walkSoundSecond;
 
     public Transform groundCheck;
 
@@ -41,6 +46,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _isFalling = false;
         _сheckGhostWakeUp = false;
         _counter = 0;
         _rb = GetComponent<Rigidbody2D>();
@@ -51,6 +57,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckFalling();
         FreezePlayer();
         CheckGhostStatus();
         if (!GhostController.IsDisplayed)
@@ -65,7 +72,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (!GhostController.IsDisplayed)
         {
             ApplyMovenent();
@@ -227,7 +233,46 @@ public class PlayerController : MonoBehaviour
         
     }
     
+    
+    void CheckFalling()
+    {
+        if (_isGrounded)
+        {
+            _isFalling = false;
+        }
+        else if (!_isFalling)
+        {
+            // если персонаж не на земле и не падает, запускаем корутину, чтобы проверять падение
+            StartCoroutine(CheckFall());
+        }
+    }
+    
+    private IEnumerator CheckFall()
+    {
+        _isFalling = true;
+        float startHeight = transform.position.y;
+        yield return new WaitForSeconds(0.3f);
 
+        while (_isGrounded)
+        {
+            float currentHeight = transform.position.y;
+
+            if (currentHeight < startHeight - 0.001f)
+            {
+                fallSoundEffect.PlayOneShot(fallSound);
+                break;
+            }
+            yield return null;
+        }
+        _isFalling = false;
+    }
+    
+    void PlayStepSoundFirst() {
+        walkSoundEffectFirst.PlayOneShot(walkSoundFirst);
+    }
+    void PlayStepSoundSecond() {
+        walkSoundEffectSecond.PlayOneShot(walkSoundSecond);
+    }
 
 
     private void Fall()

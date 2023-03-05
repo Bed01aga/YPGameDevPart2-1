@@ -1,24 +1,23 @@
 using UnityEngine;
+using System.Collections;
 
 public class GhostController : MonoBehaviour
 {
+    public AudioClip audioClip;
+    public AudioSource audioSource;
+
     public GameObject player;
     public GameObject ghost;
     public Cinemachine.CinemachineBrain cmBrain;
     public Cinemachine.CinemachineVirtualCamera playerCamera;
     public Cinemachine.CinemachineVirtualCamera ghostCamera;
-    public float ghostSpeed;
     public static bool IsDisplayed;
-    public Vector3 offset = new Vector2(2f,0f);
-    
+    public Vector3 offset = new Vector2(2f, 0f);
+
     public static float DistancePlayerAndGhost;
     
-    private Rigidbody2D _rb2d;
-
-
     void Start()
     {
-        _rb2d = GetComponent<Rigidbody2D>();
         // Hide the second character at the start of the game
         ghost.SetActive(false);
         IsDisplayed = false;
@@ -32,11 +31,14 @@ public class GhostController : MonoBehaviour
         {
             FollowPlayer();
         }
+
         CheclDistance();
         SwapCamera();
-        
+
     }
     
+
+
     void SwapCamera()
     {
 
@@ -51,11 +53,14 @@ public class GhostController : MonoBehaviour
                 {
                     playerCamera.Priority = 10;
                     ghostCamera.Priority = 0;
+                    audioSource.Stop();
                 }
                 else
                 {
                     playerCamera.Priority = 0;
                     ghostCamera.Priority = 10;
+                    audioSource.Play();
+                    
                 }
                 if (IsDisplayed)
                 {
@@ -80,4 +85,6 @@ public class GhostController : MonoBehaviour
         playerCamera.Priority=10;
         ghostCamera.Priority=0;
     }
+    
+    
 }
