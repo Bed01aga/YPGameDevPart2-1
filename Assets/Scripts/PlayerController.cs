@@ -226,6 +226,7 @@ public class PlayerController : MonoBehaviour
         if (_isGhost || _сheckGhostWakeUp)
         {
             _rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             _rb.gravityScale = 2f;
         }
         else
