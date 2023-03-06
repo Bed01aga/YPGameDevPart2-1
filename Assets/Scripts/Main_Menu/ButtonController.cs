@@ -26,4 +26,9 @@ public class ButtonController : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(3);
     }
+    
+    public void OnExitButtonClicked()
+    {
+        Application.Quit();
+    }
 }
